@@ -5,17 +5,22 @@
       <Top />
     </el-header>
     <el-container>
-      <el-aside width="200px">Aside</el-aside>
-      <el-main>Main</el-main>
+      <!-- 侧边栏 -->
+      <Sidebar />
+      <el-main>
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </el-container>
 </template>
 
 <script>
 import Top from "@/layout/top.vue";
+import Sidebar from "@/layout/sidebar.vue";
 export default {
   components: {
-    Top
+    Top,
+    Sidebar
   }
 };
 </script>

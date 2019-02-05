@@ -7,7 +7,7 @@
       <h2>电商后台管理系统</h2>
     </el-col>
     <el-col :span="8">
-      <a href="#" @click="logout">退出</a>
+      <a href="#" @click.prevent="logout">退出</a>
     </el-col>
   </el-row>
 </template>
@@ -16,9 +16,27 @@
 export default {
   methods: {
     logout() {
-      this.$http.request({
-        url: ''
+      this.$confirm("确定退出吗?", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning"
       })
+        .then(() => {
+          // 删除token
+          window.localStorage.removeItem('token')
+          // 跳转回登录页
+          this.$router.push('/login')
+          this.$message({
+            type: "success",
+            message: "退出成功!"
+          });
+        })
+        .catch(() => {
+          this.$message({
+            type: "info",
+            message: "已取消退出"
+          });
+        });
     }
   }
 };
