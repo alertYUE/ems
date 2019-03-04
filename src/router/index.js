@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/login/login.vue'
 import Home from '@/components/pages/home.vue'
-import User from '@/components/pages/user/user.vue'
+import Users from '@/components/pages/user/user.vue'
 import Rights from '@/components/pages/rights/rights.vue'
 import Roles from '@/components/pages/roles/roles.vue'
 
