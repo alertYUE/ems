@@ -14,7 +14,7 @@ export default new Router({
     {name: 'login', path: '/login', component: Login},
     {name: 'home', path: '/home', component: Home, children: [
       // 挂载子路由
-      { path: '/user', component: User},
+      { path: '/users', component: Users},
       { path: '/rights', component: Rights},
       { path: '/roles', component: Roles}
     ]},
