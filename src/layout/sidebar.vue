@@ -4,6 +4,9 @@
     :unique-opened="true"
     :default-active="path"
     class="el-menu-vertical-demo"
+    background-color="#545c64"
+    text-color="#fff"
+    active-text-color="#ffd04b"
   >
     <el-submenu v-for="item1 in rightList" :key="item1.id" :index="item1.path">
       <template slot="title">
@@ -43,7 +46,7 @@ export default {
       var { data, meta } = res.data;
       if (meta.status === 200) {
         this.rightList = data;
-        console.log(this.rightList);
+        // console.log(this.rightList);
       } else {
         this.$message.error(meta.msg);
       }
